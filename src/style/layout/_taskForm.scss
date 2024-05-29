@@ -1,0 +1,73 @@
+.task-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  gap: 30px;
+  .form {
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid $gray;
+    padding: 0.5rem 1rem;
+    min-width: 800px;
+    max-width: 800px;
+    font-size: 1.1rem;
+  }
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    .add {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    cursor: pointer;
+  }
+}
+
+.dark {
+  .add {
+    color: $white2;
+  }
+}
+
+.no-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  margin: 5rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .task-form {
+    .form {
+      min-width: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .task-form {
+    .form {
+      min-width: 300px;
+      max-width: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .task-form {
+    .form {
+      min-width: 250px;
+      max-width: 250px;
+      font-size: 1rem;
+    }
+    button {
+      .add {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

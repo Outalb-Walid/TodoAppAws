@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/create-react-app/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@components": ["components/index.ts"],
+      "@context/*": ["context/*"],
+      "@context": ["context/index.ts"]
+    }
+  }
+}
