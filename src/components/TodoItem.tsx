@@ -1,4 +1,4 @@
-import { FC, useRef, useState, useEffect, useCallback } from "react";
+import { FC, useRef, useEffect } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { useTodo } from "@context/TodoContext";
 
@@ -11,7 +11,7 @@ type ChildProps = {
 };
 
 const TodoItem: FC<ChildProps> = ({ item }) => {
-  const { deleteTask, editTask, setSelectedId, selectedId, localCheck, task } =
+  const { deleteTask, editTask, setSelectedId, selectedId, localCheck } =
     useTodo();
 
   const checktext = useRef<HTMLParagraphElement>(null);
@@ -39,6 +39,11 @@ const TodoItem: FC<ChildProps> = ({ item }) => {
   useEffect(() => {
     localChecked();
   }, []);
+
+  const handleDeleteClick = () => {
+    deleteTask(item.id);
+  };
+
   return (
     <div className={taskCardClass}>
       <input
@@ -54,7 +59,7 @@ const TodoItem: FC<ChildProps> = ({ item }) => {
         {item.text}
       </p>
       <div className="card-btn">
-        <FaTrash className="delete" onClick={() => deleteTask(item.id)} />
+        <FaTrash className="delete" onClick={handleDeleteClick} />
         <FaEdit className="edit" onClick={handleEditClick} />
       </div>
     </div>
